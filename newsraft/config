@@ -1,0 +1,24 @@
+global-section-name all
+notification-command "notify-send '%q: feeds updates'" 
+
+bind v exec 'mpv -sid=1 "%l"'
+bind f exec ~/.config/Scripts/nsxiv-url.sh "%l"
+bind n exec open-in-browser-command nvim "%c"
+bind z exec open-in-browser-command zen-browser -new-tab %l
+bind y exec 'echo "%l" | xclip -sel clip'
+bind K toggle-read
+bind J mark-read; jump-to-next
+
+color-status white black 
+
+color-list-section white
+color-list-section-selected black white
+color-list-section-unread bold white
+
+color-list-feed white
+color-list-feed-selected black white 
+color-list-feed-unread bold white
+
+color-list-item white
+color-list-item-selected black white 
+color-list-item-unread bold white

@@ -1,0 +1,12 @@
+
+configuration {
+    modi:       ["drun", "run", "filebrowser"];
+    display-drun: "Apps";
+    display-window: "Tabs";
+    drun-display-format: "{name}";
+    font: "Iosevka Nerd Font 10";
+    show-icons: false;
+    terminal:   "ghostty";
+}
+
+@theme "~/.config/rofi/themes/oneblack.rasi"

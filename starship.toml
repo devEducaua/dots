@@ -1,0 +1,54 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = '$directory$git_branch[󰘧](bold gray) '
+
+[character]
+success_symbol = '[󰘧](bold gray)'
+
+[directory]
+style = 'white'
+truncation_length = 3
+format = '[$path]($style)[$read_only]($read_only_style) '
+
+[nodejs]
+# symbol = '󰛦 '
+symbol = '󰛦 '
+detect_files = ['pnpm-lock.yaml']
+style = 'white'
+format = '[$symbol() ]($style)'
+disabled = false
+
+[bun]
+symbol = '󰛦'
+style = 'white'
+format = '[$symbol() ]($style)'
+disabled = true
+
+[git_branch]
+symbol = ' '
+style = 'white'
+
+[c]
+disabled = true
+
+[lua]
+disabled = true
+
+[python]
+disabled = true
+
+[rust]
+symbol = ' '
+style = 'white'
+format = '[$symbol()rust ]($style)'
+
+[haskell]
+disabled = true
+
+[direnv]
+disabled = true
+
+[package]
+disabled = true

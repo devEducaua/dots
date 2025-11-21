@@ -1,0 +1,13 @@
+[window]
+dynamic_padding = true
+decorations = "none"
+
+
+[font]
+#normal = { family = "Terminess Nerd Font Mono", style = "Regular" }
+normal = { family = "CaskaydiaCove Nerd Font Mono", style = "Regular" }
+size = 10
+
+[colors.primary]
+background = "#000000"
+foreground = "#777777"

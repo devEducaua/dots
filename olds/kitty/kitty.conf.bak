@@ -1,0 +1,22 @@
+background #000000
+# background #0c0c0c
+foreground #777777
+
+# background #dddddd
+# foreground #0c0c0c
+
+window_margin_width 8
+
+background_opacity 1
+
+cursor #777777
+cursor_shape beam
+
+confirm_os_window_close 0
+
+# BEGIN_KITTY_FONTS
+font_family      family="CaskaydiaMono Nerd Font Mono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
