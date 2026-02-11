@@ -1,0 +1,38 @@
+* {
+    font-family: 'CaskaydiaCove Nerd Font';
+    border-radius: 4px;
+}
+
+html[dark], [dark] {
+    --yt-spec-base-background: #000;
+    --yt-spec-additive-background: #000;
+    --yt-spec-inverted-background: #777 !important;
+}
+
+html[darker-dark-theme][dark], [darker-dark-theme] [dark] {
+    --yt-spec-text-primary: #777;
+}
+
+#bottom-actions {
+    --yt-saturated-raised-background: #111;
+}
+
+#description {
+    background-color: #000;
+}
+
+#start,
+/* #end, */
+#logo,
+#voice-search-button,
+ytd-mini-guide-renderer, 
+ytd-guide-renderer,
+ytd-mini-guide-renderer, 
+ytd-guide-renderer,
+#subscribe-button-shape,
+#button-shape,
+#flexible-item-buttons,
+.ytp-fullscreen-grid-stills-container,
+#top-level-buttons-computed {
+    display: none !important;
+}
