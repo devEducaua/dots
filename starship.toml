@@ -27,7 +27,7 @@ format = '[$symbol() ]($style)'
 disabled = true
 
 [git_branch]
-symbol = ' '
+symbol = ''
 style = 'white'
 
 [c]

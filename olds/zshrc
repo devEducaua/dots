@@ -1,0 +1,103 @@
+# Created by newuser for 5.9
+#PROMPT='%F{#cba6f7}%~ % 󰘧 %f'
+#RPROMPT='%F{#cba6f7}%* %f'
+
+PROMPT='%F{#777777}%~ % %f'
+# PROMPT='%F{#777777}%~ % 󰘧 %f'
+# RPROMPT='%F{#777777}%* %f'
+
+export LS_COLORS='di=1;38'
+
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+alias lg='ls -a | grep'
+alias cl='clear'
+alias rm='rm -r'
+alias kipz='killall -q polybar zscroll' 
+alias cd...='cd .. && cd ..'
+
+alias nf='neofetch --ascii ~/.config/neofetch/rei.txt'
+# alias nf='neofetch --ascii ~/.config/neofetch/skull.txt'
+alias nv='nvim'
+alias setbr='setxkbmap br'
+alias b='btop'
+alias pipes='pipes.sh'
+alias mine='~/.config/Scripts/mine.sh'
+alias nnf='neofetch'
+alias rng='ranger'
+alias vga='~/.config/Scripts/wall.sh'
+alias aquarium='asciiquarium -t'
+alias clima='curl https://wttr.in'
+alias msk='musikcube'
+
+alias zshc='nv ~/.zshrc'
+alias i3c='nv ~/.config/i3/config'
+alias nvc='cd ~/.config/nvim'
+alias toml='nv ~/.config/alacritty/alacritty.toml'
+alias picomc='nv ~/.config/picom/picom.conf'
+alias bspwmrc='nv ~/.config/bspwm/bspwmrc'
+alias sxhkdrc='nv ~/.config/sxhkd/sxhkdrc'
+alias polyc='cd ~/.config/polybar'
+alias dunstrc='nv ~/.config/dunst/dunstrc'
+alias bashc='nv ~/.bashrc'
+alias rngc='nv ~/.config/ranger/rc.conf'
+alias stc='cd ~/.config/st'
+alias dwmc='cd ~/.config/dwm'
+alias swayc='nv ~/.config/sway/config'
+alias qtilec='nv ~/.config/qtile/config.py'
+alias css='cd ~/.zen/67g8uwvc.Default\ \(alpha\)/chrome/'
+alias hypr='nv ~/.config/hypr/hyprland.conf'
+alias rofic='cd ~/.config/rofi/'
+alias niric='nv ~/.config/niri/config.kdl'
+alias riverc='nv ~/.config/river/init'
+alias scripts='cd ~/.config/Scripts'
+alias kittyc='nv ~/.config/kitty/kitty.conf'
+alias ghosttyc='nv ~/.config/ghostty/config'
+alias neoc='nv ~/.config/neofetch/config.conf'
+alias awmc='nv ~/.config/awesome/rc.lua'
+alias xmoc='nv ~/.config/xmonad/xmonad.hs'
+
+alias pac-s='sudo pacman -S'
+alias pac-ss='pacman -Ss'
+alias pac-r='sudo pacman -Rs'
+alias pac-n='sudo pacman -Rns'
+alias pac-q='pacman -Q'
+alias pac-qg='pacman -Q | grep'
+alias pyu='sudo pacman -Syu'
+
+alias ys='yay -S'
+alias yss='yay -Ss'
+alias yr='yay -Rs'
+alias yyu='yay -Syu'
+
+alias fl='flatpak install flathub'
+alias fs='flatpak search'
+alias fls='flatpak list --app'
+alias fu='flatpak uninstall'
+alias fp='flatpak update'
+alias fr='flatpak run'
+
+export PATH=$PATH:/home/edu/.spicetify
+export PATH="/home/edu/.local/bin/:$PATH"
+export XDG_SESSION_TYPE=wayland
+export QT_QPA_PLATFORM=wayland
+export MOZ_ENABLE_WAYLAND=1
+
+# pnpm
+export PNPM_HOME="/home/edu/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+eval "$(starship init zsh)"

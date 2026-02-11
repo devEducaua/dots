@@ -1,13 +1,20 @@
 global-section-name all
 notification-command "notify-send '%q: feeds updates'" 
 
-bind v exec 'mpv -sid=1 "%l"'
+unbind v
+unbind e
+
+bind e view-errors
+bind v exec mpv "%l"
 bind f exec ~/.config/Scripts/nsxiv-url.sh "%l"
 bind n exec open-in-browser-command nvim "%c"
 bind z exec open-in-browser-command zen-browser -new-tab %l
 bind y exec 'echo "%l" | xclip -sel clip'
+
+
 bind K toggle-read
 bind J mark-read; jump-to-next
+bind do exec 'yt-dlp --write-auto-subs --sub-format srt --sub-langs en "%l"'
 
 color-status white black 
 

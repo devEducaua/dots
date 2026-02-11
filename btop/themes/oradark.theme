@@ -1,0 +1,86 @@
+# Colors should be in 6 or 2 character hexadecimal or single spaced rgb decimal: "#RRGGBB", "#BW" or "0-255 0-255 0-255"
+# example for white: "#FFFFFF", "#ff" or "255 255 255".
+
+# All graphs and meters can be gradients
+# For single color graphs leave "mid" and "end" variable empty.
+# Use "start" and "end" variables for two color gradient
+# Use "start", "mid" and "end" for three color gradient
+
+# Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg]="#00"
+
+# Main text color
+theme[main_fg]="#77"
+
+# Title color for boxes
+theme[title]="#aa"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#90"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#00" 
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#aa"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#22"
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#90"
+
+# Cpu box outline color
+theme[cpu_box]="#00"
+
+# Memory/disks box outline color
+theme[mem_box]="#00"
+
+# Net up/down box outline color
+theme[net_box]="#00"
+
+# Processes box outline color
+theme[proc_box]="#00"
+
+# Box divider line and small boxes line color
+theme[div_line]="#22"
+
+# Temperature graph colors
+theme[temp_start]="#3b"
+theme[temp_mid]=""
+theme[temp_end]="#ff"
+
+# CPU graph colors
+theme[cpu_start]="#d17e25"
+theme[cpu_mid]=""
+theme[cpu_end]="#d17e25"
+
+# Mem/Disk free meter
+theme[free_start]="#3b"
+theme[free_mid]=""
+theme[free_end]="#ff"
+
+# Mem/Disk cached meter
+theme[cached_start]="#3b"
+theme[cached_mid]=""
+theme[cached_end]="#ff"
+
+# Mem/Disk available meter
+theme[available_start]="#3b"
+theme[available_mid]=""
+theme[available_end]="#ff"
+
+# Mem/Disk used meter
+theme[used_start]="#3b"
+theme[used_mid]=""
+theme[used_end]="#ff"
+
+# Download graph colors
+theme[download_start]="#d17e25"
+theme[download_mid]=""
+theme[download_end]="#d17e25"
+
+# Upload graph colors
+theme[upload_start]="#d17e25"
+theme[upload_mid]=""
+theme[upload_end]="#d17e25"

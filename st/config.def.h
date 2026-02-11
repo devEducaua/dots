@@ -5,8 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "CaskaydiaCove Nerd Font Mono:pixelsize=15:antialias=true:autohint=true";
-// static char *font = "Terminess Nerd Font Mono:pixelsize=15:antialias=true:autohint=true";
+// static char *font = "OpenDyslexicM Nerd Font Mono:pixelsize=15:antialias=true:autohint=true";
+static char *font = "Monaspace Krypton:pixelsize=15:antialias=true:autohint=true";
+// static char *font = "ProFont:pixelsize=16:antialias=false:autohint=true";
+// static char *font = "CaskaydiaCove Nerd Font Mono:pixelsize=15:antialias=true:autohint=true";
+// static char *font = "Terminess Nerd Font Mono:pixelsize=17:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*

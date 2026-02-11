@@ -1,8 +1,6 @@
 #
 # wm independent hotkeys
 #
-
-# terminal emulator
 super + Return
 	st
 
@@ -10,35 +8,35 @@ super + shift + Return
     alacritty
 
 super + w
-    zen-browser
+    qutebrowser
 
 super + shift + w
-    qutebrowser
+    zen-browser
 
 super + n
     st -e nvim +:Notes
-    # /home/edu/.config/Scripts/notes.sh
-
-super + shift + n
-    /home/edu/.config/Scripts/notes.sh daily
 
 super + e
-    /home/edu/.config/Scripts/search.sh
+    /home/edu/.config/Scripts/choosesession.sh
 
 super + shift + e
-    /home/edu/.config/Scripts/search.sh searxng
-
-super + shift + d
-    /home/edu/.config/Scripts/choosesession.sh
+    mpv.sh
 
 super + d
     dmenu_run -p "apps:" -i
+
+super + shift + d
+    /home/edu/.config/Scripts/search.sh
+
+super shift + s
+    search.sh
 
 super + y
     flameshot gui
 
 super + x
-    /home/edu/.config/rofi/powermenu.sh
+    /home/edu/.config/Scripts/powermenu.sh
+    # /home/edu/.config/rofi/powermenu.sh
     
 super + shift + v
     /home/edu/.config/Scripts/gaps.sh n
@@ -48,31 +46,30 @@ super shift + b
 
 super + o
     /home/edu/.config/Scripts/sound.sh down
-    # /home/edu/.config/Scripts/volume.sh d 10
 
 super + shift + o
     /home/edu/.config/Scripts/sound.sh mdown
-    # /home/edu/.config/Scripts/volume.sh d 5
 
 super + shift + i
     /home/edu/.config/Scripts/sound.sh mup
-    # /home/edu/.config/Scripts/sound.sh mup
 
-    #/home/edu/.config/Scripts/volume.sh i 5
 super + i
     /home/edu/.config/Scripts/sound.sh up
-    # /home/edu/.config/Scripts/volume.sh i 10
 
 super + m
     mpc toggle
-    # /home/edu/.config/Scripts/mpd-rofi.sh
+
+super + shift + m
+    mpc next
+
+super + ctrl + m
+    mpc prev
 
 super + z
     /home/edu/.config/Scripts/date.sh
 
 super + p
     /home/edu/.config/Scripts/wall-sel.sh
-    #/home/edu/.config/rofi-wallpaper-changer/wch.sh
 
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -99,9 +96,9 @@ super + q
 # 	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
+# super + y
+# 	bspc node newest.marked.local -n newest.!automatic.local
+#
 # swap the current node and the biggest window
 super + g
 	bspc node -s biggest.window
@@ -143,11 +140,11 @@ super + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
+# super + {o,i}
+# 	bspc wm -h off; \
+# 	bspc node {older,newer} -f; \
+# 	bspc wm -h on
+#
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'

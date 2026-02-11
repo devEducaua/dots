@@ -148,6 +148,11 @@
         ),
 
         (
+            name: "a-artists",
+            pane: Pane(AlbumArtists)
+        ),
+
+        (
             name: "paths",
             pane: Pane(Directories),
         ),
