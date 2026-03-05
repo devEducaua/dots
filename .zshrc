@@ -4,17 +4,18 @@ export EDITOR='$HOME/dow/bloat/nvim-linux-x86_64/bin/nvim'
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.config/Scripts:$PATH"
 export MANPAGER="$HOME/dow/bloat/nvim-linux-x86_64/bin/nvim +Man!"
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+export CURRENTBOOK=$(cat ~/.config/cur-book-path.txt)
+
+autoload -U tetriscurses
 
 PROMPT="%F{white}%~%f 󰘧 "
 
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE="$XDG_CACHE_HOME/zsh_history"
-HISTCONTROL=ignoreboth
 
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
@@ -34,32 +35,35 @@ alias nx="nsxiv"
 alias bt="bluetui"
 
 alias v="vb.sh"
+alias vn="$EDITOR -u ~/.config/nvim-min/init.lua"
 alias nv="z ~/proj/ && v"
-alias no="z ~/not & v"
-alias tnp="tn $(pwd)"
+alias no="z ~/not && v"
+alias todo="z ~/not && v TODO.md"
+alias tnp="tn \$(pwd)"
 alias scripts='z ~/.config/Scripts && v'
 alias tws="bluetoothctl connect 41:42:41:59:31:26"
 alias twsd="bluetoothctl disconnect"
 alias wht="nsxiv -f ~/img/others/white.png"
-alias p3="ping -3 google.com"
+alias p3="ping -c 3 google.com"
 alias ta="tmux attach"
 alias tls="tmux ls"
+alias tor="z ~/dow/tor-browser/ && ./start-tor-browser.desktop"
 
-alias sxhkdrc 'nvim ~/.config/sxhkd/sxhkdrc'
-alias bspwmrc 'nvim ~/.config/bspwm/bspwmrc'
-alias zshc 'nvim ~/.zshrc'
-alias fishc 'nvim ~/.config/fish/config.fish'
-alias starc 'nvim ~/.config/starship.toml'
-alias stc 'z ~/dow/bloat/st && nvim .'
+alias sxhkdrc='v ~/.config/sxhkd/sxhkdrc'
+alias bspwmrc='v ~/.config/bspwm/bspwmrc'
+alias fishc='v ~/.config/fish/config.fish'
+alias starc='v ~/.config/starship.toml'
+alias stc='z ~/dow/bloat/st && v'
 alias tmuxc='nvim ~/.config/tmux/tmux.conf'
-alias nvc='z ~/.config/nvim && nvim .'
-alias dunstrc='nvim ~/.config/dunst/dunstrc'
-alias rngc='nvim ~/.config/ranger/rc.conf'
-alias mpdc='z ~/.config/mpd/'
-alias rmpcc='v ~/.config/rmpc/'
-alias nwc='nvim ~/.config/newsraft/'
+alias nvc='z ~/.config/nvim && v'
+alias dunstrc='v ~/.config/dunst/dunstrc'
+alias rngc='v ~/.config/ranger/rc.conf'
+alias mpdc='z ~/.config/mpd/ && v'
+alias rmpcc='z ~/.config/rmpc/ && v'
+alias nwc='v ~/.config/newsraft/'
 alias qutec='z ~/.config/qutebrowser && nvim .'
-alias zshrc="v .zshrc"
+alias zshrc="v ~/.zshrc"
+alias zathurarc="v ~/.config/zathura/zathurarc"
 
 alias pac-s="sudo pacman -S"
 alias pac-ss="pacman -Ss"
@@ -69,3 +73,10 @@ alias pac-q="pacman -Q"
 alias pac-qg="pacman -Q | rg"
 alias pac-i="pacman -Si"
 alias pyu="sudo pacman -Syu"
+
+# bun completions
+[ -s "/home/edu/.bun/_bun" ] && source "/home/edu/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
