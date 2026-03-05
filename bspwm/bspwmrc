@@ -20,7 +20,5 @@ mpd
 xset s off &
 xset -dpms &
 # xset r rate 200 50 &
-# setxkbmap -layout "br,ru" -option "grp:alt_shift_toggle" &
 setxkbmap br &
-# xsetroot -mod 14 14 -bg "#000000" -fg "#3b3b3b"
-feh --bg-fill /home/edu/img/wall/autumn-train.jpg &
+xsetroot -mod 14 14 -bg "#000000" -fg "#3b3b3b"
