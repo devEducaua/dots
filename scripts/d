@@ -1,0 +1,4 @@
+#!/bin/sh
+
+path=$(which "$1")
+nvim "$path"

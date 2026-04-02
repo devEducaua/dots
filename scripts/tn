@@ -1,0 +1,21 @@
+#!/bin/sh
+
+path=$1
+if [ -z "$path" ]; then
+    path=$(fd . --type d --max-depth 1 ~/proj/ | fzf)
+fi
+
+mkdir -p "$path"
+
+name=$2
+[ -z "$name" ] && name="$(basename "$path")"
+
+tmux new-session -d -c "$path" -s "$name"
+tmux send-keys -t "$name":1 "$EDITOR ." C-m
+tmux new-window -c "$path" -t "$name"
+
+if [ -z "$TMUX" ]; then
+    tmux attach-session -t "$name":1 
+else
+    tmux switch-client -t "$name":1 
+fi

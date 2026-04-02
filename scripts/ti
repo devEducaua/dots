@@ -1,0 +1,28 @@
+#!/bin/sh
+
+prj=$(fd . --type d --max-depth 1 ~/proj/ | fzf)
+
+if [ -z "$prj" ]; then
+    exit 0
+fi
+
+session="$(basename "$prj")"
+
+create_session() {
+    tmux new-session -d -c "$prj" -s "$session"
+    tmux send-keys -t "$session":1 'v' C-m
+    tmux new-window -c "$prj" -t "$session"
+}
+
+if [ -z "$TMUX" ]; then
+    if ! tmux has-session -t "$session" 2>/dev/null; then
+        create_session
+    fi
+    tmux attach-session -t "$session":1
+else
+    if ! tmux has-session -t "$session" 2>/dev/null; then
+        create_session
+    fi
+
+    tmux switch-client -t "$session":1
+fi
