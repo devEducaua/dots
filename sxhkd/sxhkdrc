@@ -8,10 +8,10 @@ super + shift + Return
     alacritty
 
 super + w
-    qutebrowser
+    librewolf
 
 super + shift + w
-    zen-browser
+    /home/edu/dow/bloat/tor-browser/Browser/start-tor-browser --detach
 
 super + n
     st -e nvim +:Notes
