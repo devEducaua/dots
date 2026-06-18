@@ -1,8 +1,13 @@
 #!/bin/sh
 
+launcher=$1
+if [ -z "$launcher" ]; then
+    launcher="dmenu"
+fi
+
 tmuxsessions=$(tmux ls | awk -F: '{ print $1 }')
 
-choice=$(echo -e "$tmuxsessions" | dmenu -p "attach:" -i)
+choice=$(echo -e "$tmuxsessions" | "$launcher" -p "attach:" -i)
 
 [ -z "$choice" ] && exit 0
 

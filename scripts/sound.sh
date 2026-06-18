@@ -1,42 +1,32 @@
 #!/bin/bash
 
-VOLUME_STEP=10
-MINI_VOLUME=1
+STEP=10
+MSTEP=1
 
-increase_volume() {
-    pamixer -i $VOLUME_STEP
-    dunstify -i GIBRISH "inc    -   $(pamixer --get-volume)%"
-}
-
-decrease_volume() {
-    pamixer -d $VOLUME_STEP
-    dunstify -i GIBRISH "dec    -   $(pamixer --get-volume)%"
-}
-
-mini_inc() {
-    pamixer -i $MINI_VOLUME
-    dunstify -i GIBRISH "m-inc     -   $(pamixer --get-volume)%"
-}
-
-mini_dec() {
-    pamixer -d $MINI_VOLUME 
-    dunstify -i GIBRISH "m-dec     -   $(pamixer --get-volume)%"
+change_and_send() {
+    mode=$1
+    if [ "$mode" = "i" ]; then
+        pamixer -i $2
+    else
+        pamixer -d $2
+    fi
+    notify-send -i GIBRISH "$3    -   $(pamixer --get-volume)%"
 }
 
 case "$1" in
     up)
-        increase_volume
+        change_and_send "i" $STEP "inc"
         ;;
     down)
-        decrease_volume
+        change_and_send "d" $STEP "dec"
         ;;
     mup)
-        mini_inc
+        change_and_send "i" $MSTEP "m-inc"
         ;;
     mdown) 
-        mini_dec
+        change_and_send "d" $MSTEP "m-dec"
         ;;
     *)
-        echo "Uso: $0 {up|down|mup|mdown}"
+        echo "uso: $0 {up|down|mup|mdown}"
         exit 1
 esac

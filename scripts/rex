@@ -1,2 +1,0 @@
-#!/bin/sh
-echo $2 | nc $1 1900 | less
