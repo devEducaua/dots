@@ -2,13 +2,20 @@ set recolor true
 set recolor-keephue true
 
 set default-bg "#000000"
-set default-fg "#777777"
+set default-fg "#aaaaaa"
+
 set notification-bg "#000000"
 set notification-fg "#777777"
+
+set highlight-active-color "rgba(170,170,170,0.5)"
+set highlight-color "rgba(170,170,170,0.5)"
+set highlight-fg "#aaaaaa"
+
 set selection-notification "false"
-set font "Monaspace Neon 10"
+
+set font "Monaspace Krypton 10"
 
 map K zoom in
 map J zoom out
 map i recolor
-map r reload
+map s reload
